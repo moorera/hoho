@@ -2,7 +2,7 @@ name: Build and Push QingLong Docker Image
 
 on:
   schedule:
-    - cron: "0 2 * * *"
+    - cron: "5 19 */3 * *"
 
   workflow_dispatch:
 
@@ -187,8 +187,8 @@ jobs:
           push: true
 
           tags: |
-            ghcr.io/${{ steps.lower-repo.outputs.repository }}/dwfiona:latest
-            ${{ secrets.DOCKERHUB_USERNAME }}/dwfiona:latest
+            ghcr.io/${{ steps.lower-repo.outputs.repository }}/lovedw:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/lovedw:latest
 
           labels: |
             org.opencontainers.image.source=https://github.com/${{ github.repository }}
